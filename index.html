@@ -126,7 +126,7 @@
         <div class="space-y-6 animate-fade">
           <p class="inline-flex items-center gap-2 rounded-full bg-[rgba(255,255,255,.06)] px-3 py-1 text-xs tracking-wide ring-1" style="color:var(--muted); border-color: var(--line)"><span class="inline-block h-1.5 w-1.5 rounded-full" style="background:var(--accent)"></span> AI/ML Innovator • Builder • Storyteller</p>
           <h1 class="font-poppins text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight">Designing Helpful AI for Real People</h1>
-          <p class="text-lg md:text-xl max-w-prose" style="color: var(--muted)">I craft clear, safe, and practical AI experiences—from LLM-backed assistants to thoughtful interfaces. Here are a few projects and exactly how I built them.</p>
+          <p class="text-lg md:text-xl max-w-prose" style="color: var(--muted)">I craft clear, safe, and practical AI experiences—from LLM-backed assistants to analytics dashboards. Here are a few projects and exactly how I built them.</p>
           <div class="flex flex-wrap gap-3">
             <a href="#projects" class="rounded-xl px-5 py-3 font-semibold text-sm shadow-accent" style="background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220">Explore Projects</a>
             <a href="#contact" class="btn-ghost rounded-xl px-5 py-3 font-semibold text-sm">Get in touch</a>
@@ -161,11 +161,11 @@
         </article>
         <article class="glass rounded-2xl p-6 shadow-soft">
           <h3 class="font-semibold text-lg">Strengths</h3>
-          <p class="mt-3 text-[15px]" style="color:var(--muted)">Prompt design, system flows, safety scaffolds, and crisp UI writing that earns trust.</p>
+          <p class="mt-3 text-[15px]" style="color:var(--muted)">Prompt design, analytics flows, safety scaffolds, and crisp UI writing that earns trust.</p>
         </article>
         <article class="glass rounded-2xl p-6 shadow-soft">
           <h3 class="font-semibold text-lg">Focus</h3>
-          <p class="mt-3 text-[15px]" style="color:var(--muted)">Beginner-friendly assistants, thin-UI tools, and docs that show thinking and tradeoffs.</p>
+          <p class="mt-3 text-[15px]" style="color:var(--muted)">Beginner-friendly assistants, thin-UI tools, and dashboards that show thinking and tradeoffs.</p>
         </article>
       </div>
     </div>
@@ -183,16 +183,18 @@
           <span>Filter:</span>
           <button data-filter="all" class="btn-ghost rounded-lg px-3 py-1.5">All</button>
           <button data-filter="llm" class="btn-ghost rounded-lg px-3 py-1.5">LLM</button>
-          <button data-filter="design" class="btn-ghost rounded-lg px-3 py-1.5">Design</button>
+          <button data-filter="analytics" class="btn-ghost rounded-lg px-3 py-1.5">Analytics</button>
+          <button data-filter="nlp" class="btn-ghost rounded-lg px-3 py-1.5">NLP</button>
+          <button data-filter="dashboard" class="btn-ghost rounded-lg px-3 py-1.5">Dashboard</button>
         </div>
       </div>
 
       <div id="projectGrid" class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Card 1 (image fixed: uses inline SVG data URL that always renders) -->
+        <!-- Existing Card 1 -->
         <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm">
           <div class="overflow-hidden rounded-xl ring-accent">
             <img src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38?q=80&w=1640&auto=format&fit=crop" alt="AI Project Preview" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            </div>
+          </div>
           <div class="p-3">
             <h3 class="mt-2 font-semibold">AI & ML Foundations</h3>
             <p class="mt-2 text-sm" style="color:var(--muted)">Demystifying AI basics with ethics-first framing and visual notes.</p>
@@ -201,8 +203,8 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="design">
+        <!-- Existing Card 2 -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="analytics">
           <div class="overflow-hidden rounded-xl ring-accent">
             <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1680&auto=format&fit=crop" alt="Slides" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
           </div>
@@ -214,8 +216,8 @@
           </div>
         </article>
 
-        <!-- Card 3 -->
-        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm design">
+        <!-- Existing Card 3 (Chatbot) -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm analytics">
           <div class="overflow-hidden rounded-xl ring-accent">
             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1680&auto=format&fit=crop" alt="Chatbot" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
           </div>
@@ -223,14 +225,85 @@
             <h3 class="mt-2 font-semibold">SkinCare Sensei (Custom GPT)</h3>
             <p class="mt-2 text-sm" style="color:var(--muted)">Beginner routines with safety rails, tone tests, and clear outputs.</p>
             <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">LLM</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">UX</span></div>
-            <button class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p3"><i class="fas fa-eye"></i> View</button>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p3">
+                <i class="fas fa-eye"></i> View
+              </button>
+              <a href="https://chatgpt.com/g/g-690511ecce3c8191b67279ca55c600e7-skincare-sensei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line); background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220;">
+                <i class="fas fa-robot"></i> Launch Chatbot
+              </a>
+            </div>
           </div>
         </article>
+
+        <!-- NEW: Global E‑Commerce Sales Analysis (Dashboard) -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="analytics dashboard">
+          <div class="overflow-hidden rounded-xl ring-accent">
+            <img src="https://images.unsplash.com/photo-1516245834210-c4c142787335?q=80&w=1680&auto=format&fit=crop" alt="E‑commerce analytics" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-3">
+            <h3 class="mt-2 font-semibold">Global E‑Commerce Sales Analysis</h3>
+            <p class="mt-2 text-sm" style="color:var(--muted)">Forecasting, customer segments, and CLTV dashboards for strategy.</p>
+            <div class="mt-3 flex flex-wrap items-center gap-2 text-xs" style="color:var(--muted)">
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Python</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Prophet</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">K‑Means</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Power BI</span>
+            </div>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p4"><i class="fas fa-eye"></i> View</button>
+              <a href="https://github.com/laharibugata/E-Commerce-Sales-Analysis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)"><i class="fab fa-github"></i> Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- NEW: Social Media Sentiment Analysis (NLP) -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="nlp analytics dashboard">
+          <div class="overflow-hidden rounded-xl ring-accent">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1680&auto=format&fit=crop" alt="NLP sentiment" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-3">
+            <h3 class="mt-2 font-semibold">Social Media Sentiment Analysis</h3>
+            <p class="mt-2 text-sm" style="color:var(--muted)">Topic modeling + sentiment by region/time to guide engagement.</p>
+            <div class="mt-3 flex flex-wrap items-center gap-2 text-xs" style="color:var(--muted)">
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">TextBlob</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">LDA</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Tableau</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Pandas</span>
+            </div>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p5"><i class="fas fa-eye"></i> View</button>
+              <a href="https://github.com/laharibugata/reddit-sentiment-analysis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)"><i class="fab fa-github"></i> Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- NEW: LinkedIn Job Posting Data Analysis (Analytics) -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="analytics dashboard">
+          <div class="overflow-hidden rounded-xl ring-accent">
+            <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1680&auto=format&fit=crop" alt="Job market analytics" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-3">
+            <h3 class="mt-2 font-semibold">LinkedIn Job Market Analysis</h3>
+            <p class="mt-2 text-sm" style="color:var(--muted)">Roles, skills, salary trends; faster JSON queries via MongoDB.</p>
+            <div class="mt-3 flex flex-wrap items-center gap-2 text-xs" style="color:var(--muted)">
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Python</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">SQL</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">MongoDB</span>
+              <span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Seaborn</span>
+            </div>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p6"><i class="fas fa-eye"></i> View</button>
+              <a href="https://github.com/laharibugata/Job_Market_Analysis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)"><i class="fab fa-github"></i> Repo</a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS (expanded based on resume projects) -->
   <section id="skills" class="py-16 md:py-24">
     <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
       <h2 class="text-center font-poppins text-3xl md:text-4xl font-extrabold">Skills</h2>
@@ -239,13 +312,35 @@
         <div class="glass rounded-2xl p-6 shadow-soft">
           <h3 class="font-semibold">Technical</h3>
           <ul class="mt-4 grid grid-cols-2 gap-2 text-sm" style="color:var(--muted)">
-            <li>LLMs & Prompting</li><li>Safety & Guardrails</li><li>Python basics</li><li>HTML/CSS/JS</li><li>Tailwind</li><li>Docs & Diagrams</li>
+            <li>Python (Pandas, NumPy)</li>
+            <li>Matplotlib / Seaborn</li>
+            <li>Scikit‑learn, XGBoost</li>
+            <li>TensorFlow / PyTorch (basics)</li>
+            <li>Prophet (forecasting)</li>
+            <li>K‑Means, LDA</li>
+            <li>SQL, NoSQL (MongoDB)</li>
+            <li>Power BI, Tableau</li>
+            <li>AWS (S3, SageMaker)</li>
+            <li>GCP (BigQuery)</li>
+            <li>Hugging Face, NLP (spaCy, TextBlob)</li>
+            <li>Git, Jupyter</li>
           </ul>
         </div>
         <div class="glass rounded-2xl p-6 shadow-soft">
           <h3 class="font-semibold">Methods</h3>
           <ul class="mt-4 grid grid-cols-2 gap-2 text-sm" style="color:var(--muted)">
-            <li>User Research</li><li>Design Thinking</li><li>Storytelling</li><li>Experimentation</li><li>Accessibility</li><li>Rapid Iteration</li>
+            <li>Data Wrangling</li>
+            <li>EDA & Visualization</li>
+            <li>Clustering & Segmentation</li>
+            <li>Time‑series Forecasting</li>
+            <li>Sentiment & Topic Mining</li>
+            <li>Experimentation / A/B</li>
+            <li>Dashboard Design</li>
+            <li>Accessibility</li>
+            <li>User Research</li>
+            <li>Design Thinking</li>
+            <li>Documentation</li>
+            <li>Rapid Iteration</li>
           </ul>
         </div>
       </div>
@@ -343,7 +438,7 @@
       });
     });
 
-    // Modal content map
+    // Modal content map (includes direct chatbot link for p3 + new projects)
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modalBody');
     const modalClose = document.getElementById('modalClose');
@@ -354,9 +449,22 @@
       p2: `<h3 class="font-semibold text-xl">Evolution of AI</h3>
            <p style="color:var(--muted)">A concise talk with timeline, cycles, and lessons to plan responsibly.</p>
            <ul class="mt-3 list-disc pl-5"><li>What: Slides + speaker notes</li><li>How: Research → storyline → visuals</li><li>Value: Context for roadmap bets</li></ul>` ,
-      p3: `<h3 class="font-semibold text-xl">SkinCare Sensei (Custom GPT)</h3>
-           <p style="color:var(--muted)">Beginner skincare coach with short AM/PM outputs, brand-neutral, no medical advice.</p>
-           <ul class="mt-3 list-disc pl-5"><li>What: Prompt, guardrails, test suite</li><li>How: Tone trials + safety cases</li><li>Value: Trustworthy beginner UX</li></ul>`
+      p3: `<h3 class=\"font-semibold text-xl\">SkinCare Sensei (Custom GPT)</h3>
+           <p style=\"color:var(--muted)\">Beginner skincare coach with short AM/PM outputs, brand-neutral, no medical advice.</p>
+           <ul class=\"mt-3 list-disc pl-5\"><li>What: Prompt, guardrails, test suite</li><li>How: Tone trials + safety cases</li><li>Value: Trustworthy beginner UX</li></ul>
+           <a href=\"https://chatgpt.com/g/g-690511ecce3c8191b67279ca55c600e7-skincare-sensei\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line); background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220;\"><i class=\"fas fa-robot\"></i> Open SkinCare Sensei</a>` ,
+      p4: `<h3 class=\"font-semibold text-xl\">Global E‑Commerce Sales Analysis</h3>
+           <p style=\"color:var(--muted)\">Clean → segment → forecast. CLTV, churn, and product performance dashboards.</p>
+           <ul class=\"mt-3 list-disc pl-5\"><li>What: Python EDA + K‑Means + Prophet</li><li>How: Notebooks → features → BI</li><li>Value: Better demand planning</li></ul>
+           <div class=\"mt-3\"><a class=\"inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line)\" href=\"https://github.com/laharibugata/E-Commerce-Sales-Analysis\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub Repo</a></div>` ,
+      p5: `<h3 class=\"font-semibold text-xl\">Social Media Sentiment Analysis</h3>
+           <p style=\"color:var(--muted)\">Sentiment + topics over time/geo; Tableau dashboards for comms teams.</p>
+           <ul class=\"mt-3 list-disc pl-5\"><li>What: TextBlob polarity + LDA topics</li><li>How: Clean → score → visualize</li><li>Value: Track opinion shifts</li></ul>
+           <div class=\"mt-3\"><a class=\"inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line)\" href=\"https://github.com/laharibugata/reddit-sentiment-analysis\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub Repo</a></div>` ,
+      p6: `<h3 class=\"font-semibold text-xl\">LinkedIn Job Market Analysis</h3>
+           <p style=\"color:var(--muted)\">Skills/roles/salaries with faster JSON IO via MongoDB.</p>
+           <ul class=\"mt-3 list-disc pl-5\"><li>What: Python + SQL + MongoDB</li><li>How: Query → aggregate → charts</li><li>Value: Hiring & skills signals</li></ul>
+           <div class=\"mt-3\"><a class=\"inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line)\" href=\"https://github.com/laharibugata/Job_Market_Analysis\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub Repo</a></div>`
     };
 
     document.querySelectorAll('[data-modal]').forEach(btn=>{
