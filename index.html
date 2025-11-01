@@ -190,7 +190,7 @@
       </div>
 
       <div id="projectGrid" class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Existing Card 1 -->
+        <!-- Card 1 -->
         <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm">
           <div class="overflow-hidden rounded-xl ring-accent">
             <img src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38?q=80&w=1640&auto=format&fit=crop" alt="AI Project Preview" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -199,11 +199,14 @@
             <h3 class="mt-2 font-semibold">AI & ML Foundations</h3>
             <p class="mt-2 text-sm" style="color:var(--muted)">Demystifying AI basics with ethics-first framing and visual notes.</p>
             <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">LLM</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Notes</span></div>
-            <button class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p1"><i class="fas fa-eye"></i> View</button>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p1"><i class="fas fa-eye"></i> View</button>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-detail="d1"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
           </div>
         </article>
 
-        <!-- Existing Card 2 -->
+        <!-- Card 2 -->
         <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="analytics">
           <div class="overflow-hidden rounded-xl ring-accent">
             <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1680&auto=format&fit=crop" alt="Slides" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -212,11 +215,14 @@
             <h3 class="mt-2 font-semibold">Evolution of AI (Talk)</h3>
             <p class="mt-2 text-sm" style="color:var(--muted)">Milestones, winters, and practical lessons for product planning.</p>
             <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Slides</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Story</span></div>
-            <button class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p2"><i class="fas fa-eye"></i> View</button>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p2"><i class="fas fa-eye"></i> View</button>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-detail="d2"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
           </div>
         </article>
 
-        <!-- Existing Card 3 (Chatbot) -->
+        <!-- Card 3 (Chatbot) -->
         <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm analytics">
           <div class="overflow-hidden rounded-xl ring-accent">
             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1680&auto=format&fit=crop" alt="Chatbot" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -226,12 +232,9 @@
             <p class="mt-2 text-sm" style="color:var(--muted)">Beginner routines with safety rails, tone tests, and clear outputs.</p>
             <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">LLM</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">UX</span></div>
             <div class="mt-4 flex flex-wrap items-center gap-2">
-              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p3">
-                <i class="fas fa-eye"></i> View
-              </button>
-              <a href="https://chatgpt.com/g/g-690511ecce3c8191b67279ca55c600e7-skincare-sensei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line); background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220;">
-                <i class="fas fa-robot"></i> Launch Chatbot
-              </a>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p3"><i class="fas fa-eye"></i> View</button>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-detail="d3"><i class="fas fa-info-circle"></i> Details</button>
+              <a href="https://chatgpt.com/g/g-690511ecce3c8191b67279ca55c600e7-skincare-sensei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line); background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220;"><i class="fas fa-robot"></i> Launch Chatbot</a>
             </div>
           </div>
         </article>
@@ -252,6 +255,7 @@
             </div>
             <div class="mt-4 flex flex-wrap items-center gap-2">
               <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p4"><i class="fas fa-eye"></i> View</button>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-detail="d4"><i class="fas fa-info-circle"></i> Details</button>
               <a href="https://github.com/laharibugata/E-Commerce-Sales-Analysis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)"><i class="fab fa-github"></i> Repo</a>
             </div>
           </div>
@@ -273,6 +277,7 @@
             </div>
             <div class="mt-4 flex flex-wrap items-center gap-2">
               <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p5"><i class="fas fa-eye"></i> View</button>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-detail="d5"><i class="fas fa-info-circle"></i> Details</button>
               <a href="https://github.com/laharibugata/reddit-sentiment-analysis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)"><i class="fab fa-github"></i> Repo</a>
             </div>
           </div>
@@ -294,16 +299,16 @@
             </div>
             <div class="mt-4 flex flex-wrap items-center gap-2">
               <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p6"><i class="fas fa-eye"></i> View</button>
+              <button class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-detail="d6"><i class="fas fa-info-circle"></i> Details</button>
               <a href="https://github.com/laharibugata/Job_Market_Analysis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)"><i class="fab fa-github"></i> Repo</a>
             </div>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
-  <!-- SKILLS (expanded based on resume projects) -->
+  <!-- SKILLS -->
   <section id="skills" class="py-16 md:py-24">
     <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
       <h2 class="text-center font-poppins text-3xl md:text-4xl font-extrabold">Skills</h2>
@@ -322,7 +327,7 @@
             <li>Power BI, Tableau</li>
             <li>AWS (S3, SageMaker)</li>
             <li>GCP (BigQuery)</li>
-            <li>Hugging Face, NLP (spaCy, TextBlob)</li>
+            <li>Hugging Face, NLP</li>
             <li>Git, Jupyter</li>
           </ul>
         </div>
@@ -438,38 +443,59 @@
       });
     });
 
-    // Modal content map (includes direct chatbot link for p3 + new projects)
+    // Modal content maps
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modalBody');
     const modalClose = document.getElementById('modalClose');
-    const detail = {
+
+    const view = {
       p1: `<h3 class="font-semibold text-xl">AI & ML Foundations</h3>
            <p style="color:var(--muted)">Definitions, families, and ethics. Artifacts include annotated notes and a one-page cheat sheet.</p>
            <ul class="mt-3 list-disc pl-5"><li>What: Fundamentals + visual system map</li><li>How: Readings → synthesis → shareable doc</li><li>Value: Shared language for teams</li></ul>` ,
       p2: `<h3 class="font-semibold text-xl">Evolution of AI</h3>
            <p style="color:var(--muted)">A concise talk with timeline, cycles, and lessons to plan responsibly.</p>
            <ul class="mt-3 list-disc pl-5"><li>What: Slides + speaker notes</li><li>How: Research → storyline → visuals</li><li>Value: Context for roadmap bets</li></ul>` ,
-      p3: `<h3 class=\"font-semibold text-xl\">SkinCare Sensei (Custom GPT)</h3>
-           <p style=\"color:var(--muted)\">Beginner skincare coach with short AM/PM outputs, brand-neutral, no medical advice.</p>
-           <ul class=\"mt-3 list-disc pl-5\"><li>What: Prompt, guardrails, test suite</li><li>How: Tone trials + safety cases</li><li>Value: Trustworthy beginner UX</li></ul>
-           <a href=\"https://chatgpt.com/g/g-690511ecce3c8191b67279ca55c600e7-skincare-sensei\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line); background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220;\"><i class=\"fas fa-robot\"></i> Open SkinCare Sensei</a>` ,
-      p4: `<h3 class=\"font-semibold text-xl\">Global E‑Commerce Sales Analysis</h3>
-           <p style=\"color:var(--muted)\">Clean → segment → forecast. CLTV, churn, and product performance dashboards.</p>
-           <ul class=\"mt-3 list-disc pl-5\"><li>What: Python EDA + K‑Means + Prophet</li><li>How: Notebooks → features → BI</li><li>Value: Better demand planning</li></ul>
-           <div class=\"mt-3\"><a class=\"inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line)\" href=\"https://github.com/laharibugata/E-Commerce-Sales-Analysis\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub Repo</a></div>` ,
-      p5: `<h3 class=\"font-semibold text-xl\">Social Media Sentiment Analysis</h3>
-           <p style=\"color:var(--muted)\">Sentiment + topics over time/geo; Tableau dashboards for comms teams.</p>
-           <ul class=\"mt-3 list-disc pl-5\"><li>What: TextBlob polarity + LDA topics</li><li>How: Clean → score → visualize</li><li>Value: Track opinion shifts</li></ul>
-           <div class=\"mt-3\"><a class=\"inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line)\" href=\"https://github.com/laharibugata/reddit-sentiment-analysis\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub Repo</a></div>` ,
-      p6: `<h3 class=\"font-semibold text-xl\">LinkedIn Job Market Analysis</h3>
-           <p style=\"color:var(--muted)\">Skills/roles/salaries with faster JSON IO via MongoDB.</p>
-           <ul class=\"mt-3 list-disc pl-5\"><li>What: Python + SQL + MongoDB</li><li>How: Query → aggregate → charts</li><li>Value: Hiring & skills signals</li></ul>
-           <div class=\"mt-3\"><a class=\"inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm\" style=\"border:1px solid var(--line)\" href=\"https://github.com/laharibugata/Job_Market_Analysis\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub Repo</a></div>`
+      p3: `<h3 class="font-semibold text-xl">SkinCare Sensei (Custom GPT)</h3>
+           <p style="color:var(--muted)">Beginner skincare coach with short AM/PM outputs, brand-neutral, no medical advice.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: Prompt, guardrails, test suite</li><li>How: Tone trials + safety cases</li><li>Value: Trustworthy beginner UX</li></ul>
+           <a href="https://chatgpt.com/g/g-690511ecce3c8191b67279ca55c600e7-skincare-sensei" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line); background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220;"><i class="fas fa-robot"></i> Open SkinCare Sensei</a>` ,
+      p4: `<h3 class="font-semibold text-xl">Global E‑Commerce Sales Analysis</h3>
+           <p style="color:var(--muted)">Clean → segment → forecast. CLTV, churn, and product performance dashboards.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: Python EDA + K‑Means + Prophet</li><li>How: Notebooks → features → BI</li><li>Value: Better demand planning</li></ul>
+           <div class="mt-3"><a class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" href="https://github.com/laharibugata/E-Commerce-Sales-Analysis" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Repo</a></div>` ,
+      p5: `<h3 class="font-semibold text-xl">Social Media Sentiment Analysis</h3>
+           <p style="color:var(--muted)">Sentiment + topics over time/geo; Tableau dashboards for comms teams.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: TextBlob polarity + LDA topics</li><li>How: Clean → score → visualize</li><li>Value: Track opinion shifts</li></ul>
+           <div class="mt-3"><a class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" href="https://github.com/laharibugata/reddit-sentiment-analysis" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Repo</a></div>` ,
+      p6: `<h3 class="font-semibold text-xl">LinkedIn Job Market Analysis</h3>
+           <p style="color:var(--muted)">Skills/roles/salaries with faster JSON IO via MongoDB.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: Python + SQL + MongoDB</li><li>How: Query → aggregate → charts</li><li>Value: Hiring & skills signals</li></ul>
+           <div class="mt-3"><a class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" href="https://github.com/laharibugata/Job_Market_Analysis" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Repo</a></div>`
+    };
+
+    const details = {
+      d1: `<h3 class='font-semibold text-xl'>AI & ML Foundations — Details</h3>
+           <p style='color:var(--muted)'>This module is built as a short slide presentation and a quick quiz to check understanding. It covers what AI and ML mean in simple terms, how models are grouped, and why ethics matter. Great for first time learners and team onboarding.</p>`,
+      d2: `<h3 class='font-semibold text-xl'>Evolution of AI — Details</h3>
+           <p style='color:var(--muted)'>A talk that walks through key waves of AI, past winters, and what we can learn for planning. Includes a timeline, plain language notes, and a reading list for deeper study.</p>`,
+      d3: `<h3 class='font-semibold text-xl'>SkinCare Sensei — Details</h3>
+           <p style='color:var(--muted)'>A friendly chatbot that gives short morning and night routines. It avoids brands and medical advice, asks a few questions, and returns safe, simple steps with reasons. Includes a small test set for tone and guardrails.</p>`,
+      d4: `<h3 class='font-semibold text-xl'>Global E‑Commerce Sales — Details</h3>
+           <p style='color:var(--muted)'>Data cleaning, feature engineering, K‑Means customer groups, demand forecasting with Prophet, and a Power BI dashboard to track CLTV, cohort retention, and seasonal trends.</p>`,
+      d5: `<h3 class='font-semibold text-xl'>Social Media Sentiment — Details</h3>
+           <p style='color:var(--muted)'>Scrapes and cleans posts, scores sentiment, finds topics with LDA, and publishes a Tableau dashboard with filters for region and week. Helps comms teams pick better messages.</p>`,
+      d6: `<h3 class='font-semibold text-xl'>LinkedIn Job Market — Details</h3>
+           <p style='color:var(--muted)'>Parses job JSON, normalizes skills, stores in MongoDB for fast querying, and charts hiring demand and pay ranges. Useful for students planning courses and for recruiters.</p>`
     };
 
     document.querySelectorAll('[data-modal]').forEach(btn=>{
-      btn.addEventListener('click',()=>{ const id = btn.getAttribute('data-modal'); modalBody.innerHTML = detail[id]||''; modal.classList.remove('hidden'); modal.classList.add('flex'); });
+      btn.addEventListener('click',()=>{ const id = btn.getAttribute('data-modal'); modalBody.innerHTML = view[id]||''; modal.classList.remove('hidden'); modal.classList.add('flex'); });
     });
+
+    document.querySelectorAll('[data-detail]').forEach(btn=>{
+      btn.addEventListener('click',()=>{ const id = btn.getAttribute('data-detail'); modalBody.innerHTML = details[id]||''; modal.classList.remove('hidden'); modal.classList.add('flex'); });
+    });
+
     function closeModal(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
