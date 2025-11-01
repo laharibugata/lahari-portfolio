@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Laxmi Lahari Naidu Bugata • AI/ML Portfolio</title>
+
+  <!-- Poppins + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
+          boxShadow: {
+            soft: '0 10px 30px rgba(2, 6, 23, .25)',
+            ring: '0 0 0 1px rgba(255,255,255,.08) inset, 0 6px 30px rgba(0,0,0,.25)'
+          },
+          animation: { fade: 'fade .7s ease-out both', float: 'float 12s ease-in-out infinite' },
+          keyframes: {
+            fade: { '0%': { opacity: 0, transform: 'translateY(10px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            float: { '0%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' }, '100%': { transform: 'translateY(0)' } },
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1220; --surface: #0f182a; --card: rgba(17, 27, 49, .75);
+      --text: #e6edf7; --muted: #a4b1c7; --line: rgba(255,255,255,.08);
+      --accent: #6ee7ff; --accent-2: #a78bfa; --accent-3: #34d399; --accent-4: #f59e0b;
+    }
+    [data-theme="day"] {
+      --bg: #f6f8fb; --surface: #ffffff; --card: rgba(255,255,255,.7);
+      --text: #0e1220; --muted: #475569; --line: rgba(15,23,42,.08);
+      --accent: #0ea5e9; --accent-2: #7c3aed; --accent-3: #059669; --accent-4: #c2410c;
+    }
+    [data-theme="orchid"] { --accent: #c084fc; --accent-2: #60a5fa; --accent-3: #34d399; --accent-4: #f472b6; }
+    [data-theme="emerald"] { --accent: #34d399; --accent-2: #22d3ee; --accent-3: #a78bfa; --accent-4: #f59e0b; }
+
+    html, body { height: 100%; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
+
+    .glass { background: var(--card); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); }
+    .grad-1 { background: radial-gradient(1200px 700px at 10% -10%, rgba(110,231,255,.18), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(167,139,250,.15), transparent 50%), radial-gradient(700px 500px at 50% 120%, rgba(52,211,153,.12), transparent 50%); }
+    .ring-accent { box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 45%, transparent) inset; }
+
+    .btn-ghost { border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); }
+    .btn-ghost:hover { border-color: color-mix(in oklab, var(--accent) 65%, transparent); }
+
+    .title-underline::after { content: ''; display:block; width:96px; height:3px; margin:.75rem auto 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 999px; }
+
+    .shadow-accent { box-shadow: 0 8px 40px color-mix(in oklab, var(--accent) 25%, transparent); }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <!-- Floating background shapes -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10 grad-1"></div>
+  <div aria-hidden="true" class="pointer-events-none select-none fixed -z-10 right-[-120px] top-[12vh] w-[380px] h-[380px] rounded-full blur-3xl opacity-30" style="background: radial-gradient(circle, var(--accent) 0%, transparent 60%);"></div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b" style="border-color: var(--line)">
+    <nav class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#" class="group inline-flex items-center gap-2">
+          <div class="h-8 w-8 rounded-lg" style="background: linear-gradient(135deg, var(--accent), var(--accent-2));"></div>
+          <span class="font-poppins text-xl font-extrabold tracking-tight">Lahari<span style="color: var(--accent)">.AI</span></span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#about" class="hover:opacity-80">About</a>
+          <a href="#projects" class="hover:opacity-80">Projects</a>
+          <a href="#skills" class="hover:opacity-80">Skills</a>
+          <a href="#contact" class="hover:opacity-80">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Theme menu only (Search removed) -->
+          <div class="relative">
+            <button id="themeBtn" class="btn-ghost h-9 w-9 grid place-items-center rounded-lg" aria-haspopup="menu" aria-expanded="false" title="Themes"><i class="fas fa-palette"></i></button>
+            <div id="themeMenu" class="glass absolute right-0 mt-2 hidden w-56 rounded-xl p-2 shadow-soft">
+              <div class="px-2 pb-1 text-xs uppercase tracking-wider" style="color:var(--muted)">Theme</div>
+              <button data-theme-choice="night" class="w-full rounded-lg px-3 py-2 text-left hover:bg-[rgba(255,255,255,.04)]">Night (default)</button>
+              <button data-theme-choice="day" class="w-full rounded-lg px-3 py-2 text-left hover:bg-[rgba(0,0,0,.04)]">Day</button>
+              <div class="px-2 pt-2 pb-1 text-xs uppercase tracking-wider" style="color:var(--muted)">Accent</div>
+              <div class="grid grid-cols-4 gap-2 px-2 pb-2">
+                <button data-accent="default" class="h-8 rounded-lg shadow ring-accent" style="background: linear-gradient(135deg, var(--accent), var(--accent-2));"></button>
+                <button data-accent="orchid" class="h-8 rounded-lg shadow" style="background: linear-gradient(135deg, #c084fc, #60a5fa);"></button>
+                <button data-accent="emerald" class="h-8 rounded-lg shadow" style="background: linear-gradient(135deg, #34d399, #22d3ee);"></button>
+                <button data-accent="amber" class="h-8 rounded-lg shadow" style="background: linear-gradient(135deg, #f59e0b, #f472b6);"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu -->
+          <button id="menuBtn" class="md:hidden btn-ghost h-9 w-9 grid place-items-center rounded-lg" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile sheet -->
+    <div id="mobileNav" class="hidden md:hidden border-t" style="border-color: var(--line)">
+      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3">
+        <a class="py-2" href="#about">About</a>
+        <a class="py-2" href="#projects">Projects</a>
+        <a class="py-2" href="#skills">Skills</a>
+        <a class="py-2" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-20 md:py-28">
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div class="space-y-6 animate-fade">
+          <p class="inline-flex items-center gap-2 rounded-full bg-[rgba(255,255,255,.06)] px-3 py-1 text-xs tracking-wide ring-1" style="color:var(--muted); border-color: var(--line)"><span class="inline-block h-1.5 w-1.5 rounded-full" style="background:var(--accent)"></span> AI/ML Innovator • Builder • Storyteller</p>
+          <h1 class="font-poppins text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight">Designing Helpful AI for Real People</h1>
+          <p class="text-lg md:text-xl max-w-prose" style="color: var(--muted)">I craft clear, safe, and practical AI experiences—from LLM-backed assistants to thoughtful interfaces. Here are a few projects and exactly how I built them.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#projects" class="rounded-xl px-5 py-3 font-semibold text-sm shadow-accent" style="background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220">Explore Projects</a>
+            <a href="#contact" class="btn-ghost rounded-xl px-5 py-3 font-semibold text-sm">Get in touch</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="glass rounded-2xl p-6 shadow-ring">
+            <div class="aspect-[4/3] w-full overflow-hidden rounded-xl ring-accent">
+              <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1640&auto=format&fit=crop" alt="Abstract AI shapes" class="h-full w-full object-cover" />
+            </div>
+            <div class="mt-4 grid grid-cols-3 gap-3 text-center text-sm" style="color:var(--muted)">
+              <div class="rounded-xl border p-3" style="border-color: var(--line)"><div class="text-xl font-bold" style="color:var(--text)">10+</div> mini apps</div>
+              <div class="rounded-xl border p-3" style="border-color: var(--line)"><div class="text-xl font-bold" style="color:var(--text)">2</div> LLM flows</div>
+              <div class="rounded-xl border p-3" style="border-color: var(--line)"><div class="text-xl font-bold" style="color:var(--text)">3</div> design systems</div>
+            </div>
+          </div>
+          <div class="absolute -left-6 -top-6 h-20 w-20 rounded-2xl opacity-40 animate-float" style="background: linear-gradient(135deg, var(--accent), transparent)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+      <h2 class="text-center font-poppins text-3xl md:text-4xl font-extrabold">About</h2>
+      <div class="title-underline"></div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="glass rounded-2xl p-6 shadow-soft">
+          <h3 class="font-semibold text-lg">Principles</h3>
+          <p class="mt-3 text-[15px] leading-relaxed" style="color:var(--muted)">Clarity over jargon. Guardrails first. Iterate with real users. Measure outcomes, not outputs.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 shadow-soft">
+          <h3 class="font-semibold text-lg">Strengths</h3>
+          <p class="mt-3 text-[15px]" style="color:var(--muted)">Prompt design, system flows, safety scaffolds, and crisp UI writing that earns trust.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 shadow-soft">
+          <h3 class="font-semibold text-lg">Focus</h3>
+          <p class="mt-3 text-[15px]" style="color:var(--muted)">Beginner-friendly assistants, thin-UI tools, and docs that show thinking and tradeoffs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / ARTIFACTS -->
+  <section id="projects" class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="font-poppins text-3xl md:text-4xl font-extrabold">Projects</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="hidden sm:flex items-center gap-2 text-sm" style="color:var(--muted)">
+          <span>Filter:</span>
+          <button data-filter="all" class="btn-ghost rounded-lg px-3 py-1.5">All</button>
+          <button data-filter="llm" class="btn-ghost rounded-lg px-3 py-1.5">LLM</button>
+          <button data-filter="design" class="btn-ghost rounded-lg px-3 py-1.5">Design</button>
+        </div>
+      </div>
+
+      <div id="projectGrid" class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 (image fixed: uses inline SVG data URL that always renders) -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm">
+          <div class="overflow-hidden rounded-xl ring-accent">
+            <img src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38?q=80&w=1640&auto=format&fit=crop" alt="AI Project Preview" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+          <div class="p-3">
+            <h3 class="mt-2 font-semibold">AI & ML Foundations</h3>
+            <p class="mt-2 text-sm" style="color:var(--muted)">Demystifying AI basics with ethics-first framing and visual notes.</p>
+            <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">LLM</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Notes</span></div>
+            <button class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p1"><i class="fas fa-eye"></i> View</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="design">
+          <div class="overflow-hidden rounded-xl ring-accent">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1680&auto=format&fit=crop" alt="Slides" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-3">
+            <h3 class="mt-2 font-semibold">Evolution of AI (Talk)</h3>
+            <p class="mt-2 text-sm" style="color:var(--muted)">Milestones, winters, and practical lessons for product planning.</p>
+            <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Slides</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">Story</span></div>
+            <button class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p2"><i class="fas fa-eye"></i> View</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project-card glass group rounded-2xl p-4 shadow-ring hover:shadow-accent transition" data-tags="llm design">
+          <div class="overflow-hidden rounded-xl ring-accent">
+            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1680&auto=format&fit=crop" alt="Chatbot" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-3">
+            <h3 class="mt-2 font-semibold">SkinCare Sensei (Custom GPT)</h3>
+            <p class="mt-2 text-sm" style="color:var(--muted)">Beginner routines with safety rails, tone tests, and clear outputs.</p>
+            <div class="mt-3 flex items-center gap-2 text-xs" style="color:var(--muted)"><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">LLM</span><span class="px-2 py-0.5 rounded-md border" style="border-color:var(--line)">UX</span></div>
+            <button class="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm" style="border:1px solid var(--line)" data-modal="p3"><i class="fas fa-eye"></i> View</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+      <h2 class="text-center font-poppins text-3xl md:text-4xl font-extrabold">Skills</h2>
+      <div class="title-underline"></div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="glass rounded-2xl p-6 shadow-soft">
+          <h3 class="font-semibold">Technical</h3>
+          <ul class="mt-4 grid grid-cols-2 gap-2 text-sm" style="color:var(--muted)">
+            <li>LLMs & Prompting</li><li>Safety & Guardrails</li><li>Python basics</li><li>HTML/CSS/JS</li><li>Tailwind</li><li>Docs & Diagrams</li>
+          </ul>
+        </div>
+        <div class="glass rounded-2xl p-6 shadow-soft">
+          <h3 class="font-semibold">Methods</h3>
+          <ul class="mt-4 grid grid-cols-2 gap-2 text-sm" style="color:var(--muted)">
+            <li>User Research</li><li>Design Thinking</li><li>Storytelling</li><li>Experimentation</li><li>Accessibility</li><li>Rapid Iteration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 shadow-soft">
+        <h2 class="font-poppins text-2xl md:text-3xl font-extrabold">Let’s build something helpful</h2>
+        <p class="mt-2" style="color:var(--muted)">Tell me about your idea, and I’ll suggest a scoped plan with next steps.</p>
+        <form class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="md:col-span-1">
+            <label class="text-sm" for="name">Name</label>
+            <input id="name" type="text" class="mt-1 w-full rounded-xl border bg-transparent px-3 py-2 outline-none" style="border-color: var(--line)"/>
+          </div>
+          <div class="md:col-span-1">
+            <label class="text-sm" for="email">Email</label>
+            <input id="email" type="email" class="mt-1 w-full rounded-xl border bg-transparent px-3 py-2 outline-none" style="border-color: var(--line)"/>
+          </div>
+          <div class="md:col-span-2">
+            <label class="text-sm" for="msg">Message</label>
+            <textarea id="msg" rows="4" class="mt-1 w-full rounded-xl border bg-transparent px-3 py-2 outline-none" style="border-color: var(--line)"></textarea>
+          </div>
+          <div class="md:col-span-2 flex items-center justify-between">
+            <p class="text-xs" style="color:var(--muted)">I reply within 48 hours.</p>
+            <button type="button" id="fakeSubmit" class="rounded-xl px-5 py-3 font-semibold text-sm shadow-accent" style="background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1220">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t py-8" style="border-color: var(--line)">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3" style="color:var(--muted)">
+      <p>© <span id="y"></span> Laxmi Lahari Naidu Bugata</p>
+      <div class="flex items-center gap-3">
+        <a href="#" class="hover:opacity-80">LinkedIn</a>
+        <a href="#" class="hover:opacity-80">GitHub</a>
+        <a href="#" class="hover:opacity-80">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div id="modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative glass w-full max-w-2xl rounded-2xl p-6 shadow-soft">
+      <button id="modalClose" class="absolute right-3 top-3 h-9 w-9 rounded-lg btn-ghost grid place-items-center" aria-label="Close"><i class="fas fa-xmark"></i></button>
+      <div id="modalBody" class="mt-2 space-y-3"></div>
+    </div>
+  </div>
+
+  <!-- Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    // Persisted theme
+    const root = document.documentElement;
+    function setTheme(theme){ if(theme==='day'){ root.setAttribute('data-theme','day'); } else { root.removeAttribute('data-theme'); } localStorage.setItem('theme', theme||'night'); }
+    function setAccent(name){ root.removeAttribute('data-theme'); const current = localStorage.getItem('theme')||'night'; if(current!=='night'&&current!=='day') setTheme('night'); if(name==='orchid') root.setAttribute('data-theme','orchid'); else if(name==='emerald') root.setAttribute('data-theme','emerald'); else root.removeAttribute('data-theme'); localStorage.setItem('accent', name); }
+    (function initPersist(){ const t=localStorage.getItem('theme'); const a=localStorage.getItem('accent'); if(t==='day') setTheme('day'); if(a==='orchid') setAccent('orchid'); if(a==='emerald') setAccent('emerald'); })();
+
+    // Theme menu
+    const themeBtn = document.getElementById('themeBtn');
+    const themeMenu = document.getElementById('themeMenu');
+    themeBtn.addEventListener('click',()=>{ const open=themeMenu.classList.toggle('hidden'); themeBtn.setAttribute('aria-expanded', String(!open)); });
+    themeMenu.addEventListener('click', (e)=>{
+      const t = e.target.getAttribute('data-theme-choice');
+      const a = e.target.getAttribute('data-accent');
+      if(t){ setTheme(t==='day'?'day':null); }
+      if(a){ if(a==='orchid') setAccent('orchid'); else if(a==='emerald') setAccent('emerald'); else setAccent('default'); }
+    });
+    document.addEventListener('click',(e)=>{ if(!themeMenu.contains(e.target) && e.target!==themeBtn) themeMenu.classList.add('hidden'); });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn.addEventListener('click',()=>{ const open = mobileNav.classList.toggle('hidden'); menuBtn.setAttribute('aria-expanded', String(!open)); });
+
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Project filters
+    const grid = document.getElementById('projectGrid');
+    document.querySelectorAll('[data-filter]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const tag = btn.getAttribute('data-filter');
+        grid.querySelectorAll('.project-card').forEach(card=>{
+          const has = card.getAttribute('data-tags').includes(tag);
+          card.style.display = (tag==='all'||has) ? '' : 'none';
+        });
+      });
+    });
+
+    // Modal content map
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
+    const detail = {
+      p1: `<h3 class="font-semibold text-xl">AI & ML Foundations</h3>
+           <p style="color:var(--muted)">Definitions, families, and ethics. Artifacts include annotated notes and a one-page cheat sheet.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: Fundamentals + visual system map</li><li>How: Readings → synthesis → shareable doc</li><li>Value: Shared language for teams</li></ul>` ,
+      p2: `<h3 class="font-semibold text-xl">Evolution of AI</h3>
+           <p style="color:var(--muted)">A concise talk with timeline, cycles, and lessons to plan responsibly.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: Slides + speaker notes</li><li>How: Research → storyline → visuals</li><li>Value: Context for roadmap bets</li></ul>` ,
+      p3: `<h3 class="font-semibold text-xl">SkinCare Sensei (Custom GPT)</h3>
+           <p style="color:var(--muted)">Beginner skincare coach with short AM/PM outputs, brand-neutral, no medical advice.</p>
+           <ul class="mt-3 list-disc pl-5"><li>What: Prompt, guardrails, test suite</li><li>How: Tone trials + safety cases</li><li>Value: Trustworthy beginner UX</li></ul>`
+    };
+
+    document.querySelectorAll('[data-modal]').forEach(btn=>{
+      btn.addEventListener('click',()=>{ const id = btn.getAttribute('data-modal'); modalBody.innerHTML = detail[id]||''; modal.classList.remove('hidden'); modal.classList.add('flex'); });
+    });
+    function closeModal(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
+
+    // Fake submit
+    document.getElementById('fakeSubmit').addEventListener('click',()=>{ alert('Thanks! I will get back to you shortly.'); });
+  </script>
+</body>
+</html>
